@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">QNnewsDemo</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="news_type_en">
+        <item>头条</item>
+        <item>社会</item>
+        <item>国内</item>
+        <item>国际</item>
+        <item>娱乐</item>
+        <item>体育</item>
+        <item>军事</item>
+        <item>科技</item>
+        <item>财经</item>
+        <item>时尚</item>
+    </string-array>
+    <string-array name="news_type_cn">
+        <item>toutiao</item>
+        <item>shehui</item>
+        <item>guonei</item>
+        <item>guoji</item>
+        <item>yule</item>
+        <item>tiyu</item>
+        <item>junshi</item>
+        <item>keji</item>
+        <item>caijing</item>
+        <item>shishang</item>
+    </string-array>
+</resources>
