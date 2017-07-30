@@ -1,6 +1,5 @@
 package com.example.administrator.ggcode.Adapter;
 
-import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -9,7 +8,6 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.administrator.ggcode.Bean.ImageBean;
 import com.example.administrator.ggcode.R;
 
-import java.util.List;
 
 /**
  * 工程名 ： QNnewsDemo
@@ -20,21 +18,19 @@ import java.util.List;
  * 功能   ：
  */
 
-public class ImageRcycleAdapter extends BaseQuickAdapter<ImageBean.DataBean,BaseViewHolder> {
+public class ImageRcycleAdapter extends BaseQuickAdapter<ImageBean.ResultsBean,BaseViewHolder> {
 
     public ImageRcycleAdapter() {
         super(R.layout.item_recycle_view);
     }
 
     @Override
-    protected void convert(BaseViewHolder helper, ImageBean.DataBean item) {
-        Glide.with(mContext).load(item.getThumb_large_url()).centerCrop().
+    protected void convert(BaseViewHolder helper, ImageBean.ResultsBean item) {
+        Glide.with(mContext).load(item.getUrl()).centerCrop().
                 error(R.drawable.ic_version_update).
                 placeholder(R.mipmap.ic_error)
                 .crossFade().into((ImageView) helper.getView(R.id.recycle_image));
     }
 
-    public void setNewData(String date) {
 
-    }
 }

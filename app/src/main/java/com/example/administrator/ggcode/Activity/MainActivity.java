@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
@@ -150,10 +151,11 @@ public class MainActivity extends AppCompatActivity {
         int     theme_id = util.getInt("theme_id", R.style.AppTheme);
         setTheme(theme_id);
 
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//            //透明状态栏
-//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-//        }
+        if (Build.VERSION.SDK_INT>=21){
+            View decorView=getWindow().getDecorView();
+            decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN|View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            getWindow().setStatusBarColor(Color.TRANSPARENT);//系统栏设置透明
+        }
         //设置软键盘的模式为适应屏幕模式
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         setContentView(R.layout.activity_main);
@@ -165,7 +167,6 @@ public class MainActivity extends AppCompatActivity {
         mHandler = new MyHandler(this);
 
         new Thread(new Runnable() {
-            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void run() {
 
@@ -348,7 +349,7 @@ public class MainActivity extends AppCompatActivity {
         SPUtils spUtils=new SPUtils("theme_id");
         spUtils.putInt("theme_id",themes[index]);
         Intent intent = getIntent();
-        overridePendingTransition(R.anim.abc_fade_in,R.anim.abc_fade_out);
+        overridePendingTransition(R.anim.abc_popup_enter,R.anim.abc_popup_exit);
         finish();
         overridePendingTransition(R.anim.abc_fade_in,R.anim.abc_fade_out);
         startActivity(intent);
@@ -402,7 +403,7 @@ public class MainActivity extends AppCompatActivity {
 
         AlertDialog.Builder dialog=new AlertDialog.Builder(this);
         if ("0.000B".equals(Size)||Size.isEmpty()||Size.length()==0){
-            dialog.setTitle("确定要清除缓存？").setMessage("缓存大小:"+cacheSize).setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            dialog.setTitle("确定要清除缓存？").setMessage("缓存大小:"+Size).setPositiveButton("确定", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     new Thread(new Runnable() {

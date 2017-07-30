@@ -1,6 +1,7 @@
 package com.example.administrator.ggcode.Fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -15,12 +16,15 @@ import com.blankj.utilcode.utils.ToastUtils;
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
+import com.example.administrator.ggcode.Activity.ImageActivity;
 import com.example.administrator.ggcode.Adapter.ImageRcycleAdapter;
 import com.example.administrator.ggcode.Bean.ImageBean;
 import com.example.administrator.ggcode.Commons.Constants;
 import com.example.administrator.ggcode.R;
 import com.example.administrator.ggcode.net.QClitent;
 import com.example.administrator.ggcode.net.QNewsService;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -40,9 +44,11 @@ public class AboutFragment extends Fragment {
     RecyclerView recycle;
 
     ImageRcycleAdapter adapter;
+    int num=1;
+
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View view=inflater.inflate(R.layout.fragment_about, container, false);
@@ -62,24 +68,46 @@ public class AboutFragment extends Fragment {
         recycle.addOnItemTouchListener(new OnItemClickListener() {
             @Override
             public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
-                ToastUtils.showShortToast("你点击了"+position);
+             List<ImageBean.ResultsBean> list=adapter.getData();
+                String url=list.get(position).getUrl();
+                Intent intent=new Intent(getActivity(), ImageActivity.class);
+                intent.putExtra("imageUrl",url);
+                intent.putExtra("who",list.get(position).getWho());
+                startActivity(intent);
+            }
+        });
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recycle.scrollToPosition(0);
+            }
+        });
+        adapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
+            @Override
+            public void onLoadMoreRequested() {
+                num++;
+                initData();
             }
         });
         initData();
+
         return view;
     }
 
     private void initData() {
-        QClitent.getInstance().create(QNewsService.class, Constants.BASE_IMAGE_URL)
-                .getIamgeData().subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<ImageBean.DataBean>() {
-            @Override
-            public void accept(ImageBean.DataBean imageBean) throws Exception {
-                adapter.addData(imageBean);
-                refreshLayout.setRefreshing(false);
 
-            }
-        });
+        QClitent.getInstance().create(QNewsService.class,"http://gank.io/api/search/query/listview/category/").
+                getImgs(50,num)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<ImageBean>() {
+                    @Override
+                    public void accept(ImageBean resultsBean) throws Exception {
+                        adapter.setNewData(resultsBean.getResults());
+                        refreshLayout.setRefreshing(false);
+                    }
+                });
+
     }
 
     @Override

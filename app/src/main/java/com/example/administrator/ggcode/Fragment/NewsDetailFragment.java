@@ -1,5 +1,6 @@
 package com.example.administrator.ggcode.Fragment;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -34,7 +35,7 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * Created by Administrator on 2017/7/25.
  */
-
+@SuppressLint("ValidFragment")
 public class NewsDetailFragment extends BaseFragment {
 
     @BindView(R.id.rv_new_detail)
@@ -66,7 +67,7 @@ public class NewsDetailFragment extends BaseFragment {
         ButterKnife.bind(this,view);
 
         mAdapter=new NewsDataAdapter();
-        mAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);//这是动画类型    默认提供5种方法（渐显、缩放、从下到上，从左到右、从右到左）
+        mAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);//这是动画类型    默认提供5种方法（渐显、缩放、从下到上，从左到右、从右到左）
         /*************************** 设置下拉刷新 ***************************/
         srl.setColorSchemeColors(Color.RED,Color.GREEN,Color.BLUE);
         srl.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {

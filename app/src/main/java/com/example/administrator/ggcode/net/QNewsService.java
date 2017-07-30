@@ -10,6 +10,7 @@ import com.example.administrator.ggcode.Bean.TodayOfHistoryDetailBean;
 import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
@@ -101,10 +102,6 @@ public interface QNewsService {
             @Query("info") String info
     );
 
-    @GET("listjson?pn=1&rn=400&tag1=美女&tag2=全部&ie=utf8")
-    Observable<ImageBean.DataBean> getIamgeData(
-//            @Query("tag1") String tag1,
-//            @Query("tag2") String tag2,
-//            @Query("ie") String ie
-    );
+    @GET("福利/count/{count}/page/{page}")
+    Observable<ImageBean> getImgs(@Path("count") int count, @Path("page") int page);
 }
