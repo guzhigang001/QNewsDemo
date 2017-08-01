@@ -5,9 +5,7 @@
 
 ![扫码下载.png](http://upload-images.jianshu.io/upload_images/3983615-7436522deaf5fe38.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-<h2  id='1'>整体风格</h2>
-
-![.gif](http://upload-images.jianshu.io/upload_images/3983615-7ac24a323ea7c5ce.gif?imageMogr2/auto-orient/strip)
+![](http://upload-images.jianshu.io/upload_images/3983615-7ac24a323ea7c5ce.gif?imageMogr2/auto-orient/strip)
 
 >如果觉得还行，请给个star吧
 
