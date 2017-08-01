@@ -1,3 +1,6 @@
+
+![整体风格.gif](http://upload-images.jianshu.io/upload_images/3983615-cc45e083787c2dc2.gif?imageMogr2/auto-orient/strip)
+
 [软件下载地址](https://fir.im/ayqp)
 
 扫码下载：
@@ -5,7 +8,6 @@
 
 ![扫码下载.png](http://upload-images.jianshu.io/upload_images/3983615-7436522deaf5fe38.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![](http://upload-images.jianshu.io/upload_images/3983615-7ac24a323ea7c5ce.gif?imageMogr2/auto-orient/strip)
 
 >如果觉得还行，请给个star吧
 
