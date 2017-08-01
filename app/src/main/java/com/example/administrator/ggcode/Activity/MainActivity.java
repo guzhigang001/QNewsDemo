@@ -188,7 +188,13 @@ public class MainActivity extends AppCompatActivity {
             Glide.with(this).load("http://img.17gexing.com/uploadfile/2016/07/2/20160725115642623.gif").
                     asGif().centerCrop().into(mIconImage);
         }else {
-            mIconImage.setImageBitmap(BitmapFactory.decodeFile(TEMP_PATH));
+            String path=mSPUtils.getString("imagePath");
+            if (path==null||"".equals(path)||path.isEmpty()){
+                Glide.with(this).load("http://img.17gexing.com/uploadfile/2016/07/2/20160725115642623.gif").
+                        asGif().centerCrop().into(mIconImage);
+            }else {
+                displayImage(path);
+            }
         }
 
         OkHttpUtils.get().url("http://guolin.tech/api/bing_pic").build().execute(new StringCallback() {
@@ -301,7 +307,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_day_night:
                         SPUtils spUtils=new SPUtils("theme_id");
 
-                        if (spUtils.getInt("theme_id",R.style.AppTheme)==R.style.AppTheme){
+                        if (spUtils.getInt("theme_id",R.style.AppTheme)!=R.style.AppTheme_Night){
                             changeTheme(9);
                         }else {
                             Intent intent = getIntent();
@@ -674,6 +680,8 @@ public class MainActivity extends AppCompatActivity {
     private void displayImage(String imagePath) {
         if (imagePath!=null){
             Bitmap bitmap=BitmapFactory.decodeFile(imagePath);
+            mSPUtils.putBoolean("has_head", true);
+            mSPUtils.putString("imagePath",imagePath);
             mIconImage.setImageBitmap(bitmap);
         }else {
             Toast.makeText(this,"打开图片失败",Toast.LENGTH_SHORT).show();
@@ -688,7 +696,7 @@ public class MainActivity extends AppCompatActivity {
             }
             cursor.close();
         }
-        mSPUtils.putBoolean("has_head", true);
+
         if (mDialog != null && mDialog.isShowing()) {
             mDialog.dismiss();
         }

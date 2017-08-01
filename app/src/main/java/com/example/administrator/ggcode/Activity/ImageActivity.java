@@ -147,6 +147,7 @@ public class ImageActivity extends AppCompatActivity {
                 return 2;
             FileOutputStream out = new FileOutputStream(file.getPath()+"/"+fileName + ".jpg");
             mBitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+
             out.flush();
             out.close();
             // MediaScannerReceiver是一个广播接收者，当它接收到特定的广播请求后，就会去扫描指定的文件，并根据文件信息将其添加到数据库中。
