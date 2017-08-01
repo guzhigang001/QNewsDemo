@@ -6,8 +6,6 @@
 ![扫码下载.png](http://upload-images.jianshu.io/upload_images/3983615-7436522deaf5fe38.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-![扫码下载.png](http://upload-images.jianshu.io/upload_images/3983615-7436522deaf5fe38.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
 <h2  id='1'> 整体风格和个人页面</h2>
 *整体采用的是Material Design风格，看起来好看一点*
 
