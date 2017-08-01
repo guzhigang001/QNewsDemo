@@ -9,7 +9,7 @@
 <h2  id='1'> 整体风格和个人页面</h2>
 *整体采用的是Material Design风格，看起来好看一点*
 
-![整体风格.gif](http://upload-images.jianshu.io/upload_images/3983615-49600032e60cb2e4.gif?imageMogr2/auto-orient/strip)
+![整体风格.gif](http://upload-images.jianshu.io/upload_images/3983615-59ef897498d495fd.gif?imageMogr2/auto-orient/strip)
 >如果觉得还行，请给个star吧
 
 [由于上传限制 更多请请点击次连接gif了解更多](http://upload-images.jianshu.io/upload_images/3983615-cc45e083787c2dc2.gif?imageMogr2/auto-orient/strip)
