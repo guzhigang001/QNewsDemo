@@ -9,7 +9,7 @@ http://upload-images.jianshu.io/upload_images/3983615-cc45e083787c2dc2.gif?image
 >这个动态gif我是怎么也加不上去了语法都对 就是加不上去，还是点连接吧
 如果觉得还行，请给个star吧
 
-<h2  id='1'>9. 用到的第三方开源库</h2>
+<h2  id='1'> 用到的第三方开源库</h2>
 
 1. 数据来源： [聚合数据](https://www.juhe.cn/docs)
 2. 标题来源： [艺术字生成](http://www.akuziti.com/)
