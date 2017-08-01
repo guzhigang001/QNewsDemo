@@ -9,8 +9,7 @@
 
 *整体采用的是Material Design风格*
 
-![整体风格.gif](http://upload-images.jianshu.io/upload_images/3983615-7ac24a323ea7c5ce.gif?imageMogr2/auto-orient/strip)
->如果觉得还行，请给个star吧
+![](http://upload-images.jianshu.io/upload_images/3983615-7ac24a323ea7c5ce.gif?imageMogr2/auto-orient/strip)
 
 <h2  id='1'>9. 用到的第三方开源库</h2>
 
