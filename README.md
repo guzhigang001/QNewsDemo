@@ -1,6 +1,3 @@
-
-![整体风格.gif](http://upload-images.jianshu.io/upload_images/3983615-cc45e083787c2dc2.gif?imageMogr2/auto-orient/strip)
-
 [软件下载地址](https://fir.im/ayqp)
 
 扫码下载：
@@ -8,8 +5,9 @@
 
 ![扫码下载.png](http://upload-images.jianshu.io/upload_images/3983615-7436522deaf5fe38.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-
->如果觉得还行，请给个star吧
+http://upload-images.jianshu.io/upload_images/3983615-cc45e083787c2dc2.gif?imageMogr2/auto-orient/strip
+>这个动态gif我是怎么也加不上去了语法都对 就是加不上去，还是点连接吧
+如果觉得还行，请给个star吧
 
 <h2  id='1'>9. 用到的第三方开源库</h2>
 
