@@ -19,6 +19,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.blankj.utilcode.utils.FileUtils;
+import com.blankj.utilcode.utils.ImageUtils;
 import com.blankj.utilcode.utils.SPUtils;
 import com.blankj.utilcode.utils.ToastUtils;
 import com.bumptech.glide.Glide;

@@ -63,7 +63,7 @@ dependencies {
     //多行显示标题的CollapsingToolbarLayout
     compile 'net.opacapp:multiline-collapsingtoolbar:1.5.0'
     testCompile 'junit:junit:4.12'
-
+    compile project(':PushSDK')
 }
 
 //针对无法导入github上的无法依赖的解决方式

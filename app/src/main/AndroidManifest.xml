@@ -49,9 +49,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".Activity.MainActivity" />
         <activity android:name=".Activity.TodayDetailActivity" />
         <activity android:name=".Activity.ImageActivity"></activity>
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="597ffde58f4a9d4c1b00144a">
+        </meta-data>
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="c179b0908fe9d11682e718a205025871">
+        </meta-data>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Channel ID" >
+        </meta-data>
     </application>
 
 </manifest>

@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
     tools:context="com.example.administrator.ggcode.Activity.MainActivity">
     <android.support.v4.widget.DrawerLayout
         android:overScrollMode="never"
@@ -25,6 +26,7 @@
         </FrameLayout>
 
         <android.support.design.widget.NavigationView
+            android:fitsSystemWindows="true"
             android:overScrollMode="never"
             android:id="@+id/nv_left"
             android:layout_width="match_parent"
